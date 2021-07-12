@@ -1,0 +1,15 @@
+# All Serena Williams' matches for 2021 season
+select * from tp_match m
+left join tp_player wp on wp.id = m.wonplayer_id
+left join tp_player lp on lp.id = m.lostplayer_id
+left join tp_tournament t on t.id = m.tournament_id
+where (wp.lastname = 'Williams' or lp.lastname = 'Williams') and t.season = 2021
+order by tournament_id desc;
+
+# All Serena Williams' Wimbledon matches (all seasons)
+select wp.lastname, wp.firstname, lp.lastname, lp.firstname, m.score, t.name from tp_match m
+left join tp_player wp on wp.id = m.wonplayer_id
+left join tp_player lp on lp.id = m.lostplayer_id
+left join tp_tournament t on t.id = m.tournament_id
+where (wp.lastname = '%Williams%' and wp.firstname = '%Serena%' or lp.lastname like '%Williams%' and lp.firstname like '%Serena%') and t.name = 'WIMBLEDON'
+order by tournament_id desc;
