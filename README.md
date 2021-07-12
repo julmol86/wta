@@ -19,3 +19,9 @@ password: wta
 Execute queries from wta_db.sql file manually before running the program.
 
 Also make sure that psycopg2 and requests are installed locally.
+
+--
+
+# DB players table example
+
+[![wta-players.jpg](https://i.postimg.cc/V6Pd0rdN/wta-players.jpg)](https://postimg.cc/t1DXLgd0)
